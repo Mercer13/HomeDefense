@@ -14,10 +14,13 @@ public class Bird : MonoBehaviour
     [SerializeField] private float maxDistance = 3f; // максимальный радиус окружности, куда можно увести снаряд
 
     [SerializeField] private bool isPressed = false; // нажатие кнопки (изначально не нажата)
+    [SerializeField] public SpriteRenderer sprite;
+
 
     private void Start()
     {
         BirdRigid = GetComponent<Rigidbody2D>(); // Птица получает компонент Rigidbody2D
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -42,6 +45,7 @@ public class Bird : MonoBehaviour
     {
         isPressed = true; // кнопка нажата (проверка)
         BirdRigid.isKinematic = true; // птичка становится кинематической (не болтается)
+        sprite.color = Color.red;
     }
 
     private void OnMouseUp() // если кнопка мыши отжата/отпущена (также работает на смартфоне)
@@ -50,6 +54,7 @@ public class Bird : MonoBehaviour
         BirdRigid.isKinematic = false; // птичка болтается на веревке
 
         StartCoroutine(LetGo()); // запуск корутины
+        sprite.color = Color.white;
     }
 
     IEnumerator LetGo()
