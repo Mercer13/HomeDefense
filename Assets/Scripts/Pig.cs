@@ -10,7 +10,8 @@ public class Pig : MonoBehaviour
     {
         if (collision.relativeVelocity.magnitude > stamina) // если сила удара больше, чем выносливость
         {
-            Destroy(gameObject); // то объект удаляется
+           // Destroy(gameObject); // то объект удаляется
+           gameObject.SetActive(false);
         }
     }
 }
