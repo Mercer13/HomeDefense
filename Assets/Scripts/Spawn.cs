@@ -24,7 +24,8 @@ public class Spawn : MonoBehaviour
     }
     IEnumerator SpawnCD()
     {
-        Instantiate(Missile, SpawnPos.position, Quaternion.identity);
+        // Instantiate(Missile, SpawnPos.position, Quaternion.identity);
+        Instantiate(Missile, SpawnPos.position, SpawnPos.rotation);
         missiles = FindObjectsOfType<Missile>();
         yield return new WaitForSeconds(TimeSpawn);
 
