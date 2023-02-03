@@ -446,7 +446,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -489,7 +488,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.501491
+  orthographic size: 9.577721
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -513,30 +512,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0.99, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfbe51c0ce2221341bf7533cf972d92a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPos: {fileID: 1322274352}
-  Missile: {fileID: 4188695400083002403, guid: 9bb73d3c37f2e3d4b8338ba69292a942, type: 3}
-  TimeSpawn: 2
-  CountMissile: 3
-  nextLevelName: Level2
 --- !u!1 &596903186
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,8 +841,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608539968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.15, y: -5.52, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: -14.53, y: -4.16, z: 0}
+  m_LocalScale: {x: 0.88085, y: 0.88085, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1491,6 +1473,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1322274352}
+  - component: {fileID: 1322274353}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -1505,14 +1488,31 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322274351}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.19, y: 10.59, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.86602545, w: 0.49999994}
+  m_LocalPosition: {x: 20.3, y: 12.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 120}
+--- !u!114 &1322274353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322274351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbe51c0ce2221341bf7533cf972d92a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPos: {fileID: 1322274352}
+  Missile: {fileID: 5137257192061392939, guid: 9bb73d3c37f2e3d4b8338ba69292a942, type: 3}
+  TimeSpawn: 2
+  CountMissile: 3
+  nextLevelName: Level2
 --- !u!1 &1668209013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2280,7 +2280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019022446}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1476, y: 0.3747, z: 0}
+  m_LocalPosition: {x: 0.1476, y: 1.05, z: 0}
   m_LocalScale: {x: 2.2667994, y: 2.266138, z: 2.204629}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2316,7 +2316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1696267468803594359, guid: 5f713735cb4fa624d8fce443973765a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.8641
+      value: -8.06
       objectReference: {fileID: 0}
     - target: {fileID: 1696267468803594359, guid: 5f713735cb4fa624d8fce443973765a8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2356,19 +2356,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1696267468803594361, guid: 5f713735cb4fa624d8fce443973765a8, type: 3}
       propertyPath: m_Size.x
-      value: 35.934166
+      value: 37.754917
       objectReference: {fileID: 0}
     - target: {fileID: 1696267468803594361, guid: 5f713735cb4fa624d8fce443973765a8, type: 3}
       propertyPath: m_Size.y
-      value: 1.2963171
+      value: 1.2529764
       objectReference: {fileID: 0}
     - target: {fileID: 1696267468803594361, guid: 5f713735cb4fa624d8fce443973765a8, type: 3}
       propertyPath: m_Offset.x
-      value: -0.021343231
+      value: -0.9317188
       objectReference: {fileID: 0}
     - target: {fileID: 1696267468803594361, guid: 5f713735cb4fa624d8fce443973765a8, type: 3}
       propertyPath: m_Offset.y
-      value: -0.053964138
+      value: -0.032293797
       objectReference: {fileID: 0}
     - target: {fileID: 1696267468803594361, guid: 5f713735cb4fa624d8fce443973765a8, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
