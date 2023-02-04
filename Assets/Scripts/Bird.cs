@@ -15,12 +15,14 @@ public class Bird : MonoBehaviour
 
     [SerializeField] private bool isPressed = false; // нажатие кнопки (изначально не нажата)
     [SerializeField] public SpriteRenderer sprite;
-
+    public GameObject gameOverScene;
 
     private void Start()
     {
         BirdRigid = GetComponent<Rigidbody2D>(); // Птица получает компонент Rigidbody2D
         sprite = GetComponent<SpriteRenderer>();
+        gameOverScene.SetActive (false);
+        Time.timeScale = 1f;
     }
 
     private void Update()
@@ -74,7 +76,20 @@ public class Bird : MonoBehaviour
 
         else
         {
-            SceneManager.LoadScene(0); // если птички кончились, то сцена перезапускается
+            GameOver(); // если птички кончились, то сцена перезапускается
         }
+    }
+
+    public void GameOver()
+    {
+        gameOverScene.SetActive(true);
+        Time.timeScale = 0f;
+        Debug.Log("Game Over!");
+    }
+
+    public void LoadLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
 }
