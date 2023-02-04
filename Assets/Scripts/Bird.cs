@@ -65,9 +65,9 @@ public class Bird : MonoBehaviour
 
         gameObject.GetComponent<SpringJoint2D>().enabled = false; // выключается компонент "Веревка" (ну по-русски если), и птица улетает
         this.enabled = false; // сам скрипт тоже отключается, чтобы мы не могли трогать птицу, когда она уже улетела
-        Destroy(gameObject, 5); // объект удаляется через пять секунд после того, как был отпущен
+        Destroy(gameObject, 2); // объект удаляется через пять секунд после того, как был отпущен
 
-        yield return new WaitForSeconds(2); // ждем две секунды
+        yield return new WaitForSeconds(1); // ждем две секунды
 
         if (BirdPrefab != null) // если птицы еще есть (или грубо говоря, если количество префаборв не равно 0)
         {
