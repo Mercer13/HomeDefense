@@ -51,8 +51,9 @@ public class Spawn : MonoBehaviour
         return true;
     }
 
-    void Update()
+    void FixedUpdate()
     {
+
         if (MissileAreDead())
         {
             GoNextLevel();
