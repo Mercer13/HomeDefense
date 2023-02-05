@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c733e87013d0e429fdafe890f84cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelName: Level1
+  nextLevelName: Game
 --- !u!1 &616573867
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +497,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5916b89d6eb57bf439f271cadbe76249, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e4d2956f7335324f9c77cc0315d3b5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -928,12 +928,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: a344011a5cd642c40903c6105ae93609, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed9624af26c797d4e835238fa7ec0c39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.57, y: 10.24}
+  m_Size: {x: 12.8, y: 12.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
