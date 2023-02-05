@@ -1,95 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; // библиотека для перехода между сценами
 
 public class Bird : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D BirdRigid; // Rigidbody для птицы
-    [SerializeField] public Rigidbody2D ShootRigid; // Rigidbody для рогатки
+    public bool collided;
 
-    [SerializeField] public GameObject BirdPrefab; // префаб для птицы
-    [SerializeField] public Transform BirdSpawnerPos; // позиция птицы
-
-    [SerializeField] private float maxDistance = 3f; // максимальный радиус окружности, куда можно увести снаряд
-
-    [SerializeField] private bool isPressed = false; // нажатие кнопки (изначально не нажата)
-    [SerializeField] public SpriteRenderer sprite;
-    public GameObject gameOverScene;
-
-    private void Start()
+    public void Release()
     {
-        BirdRigid = GetComponent<Rigidbody2D>(); // Птица получает компонент Rigidbody2D
-        sprite = GetComponent<SpriteRenderer>();
-        gameOverScene.SetActive (false);
-        Time.timeScale = 1f;
+        PathPoints.instance.Clear();
+        StartCoroutine(CreatePathPoints());
     }
 
-    private void Update()
+    IEnumerator CreatePathPoints()
     {
-        if (isPressed == true) // если кнопка нажата
+        while (true)
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); // новый вектор, который равен курсору мыши
-
-            if (Vector2.Distance(mousePos, ShootRigid.position) > maxDistance) // если дистанция между курсором и рогаткой больше, чем максимальная дистанция
-            {
-                BirdRigid.position = ShootRigid.position + (mousePos - ShootRigid.position).normalized * maxDistance; // позиция птички будет на границе окружности (чекай ролик, если не понимаешь)
-            }
-
-            else
-            {
-                BirdRigid.position = mousePos; // если превышения нет, то птичка свободно перемещается в воорброжаемой окружности
-            }
+            if (collided) break;
+            PathPoints.instance.CreateCurrentPathPoint(transform.position);
+            yield return new WaitForSeconds(PathPoints.instance.timeInterval);
         }
     }
 
-    private void OnMouseDown() // если кнопка мыши нажата (также работает на смартфоне)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        isPressed = true; // кнопка нажата (проверка)
-        BirdRigid.isKinematic = true; // птичка становится кинематической (не болтается)
-        sprite.color = Color.red;
-    }
-
-    private void OnMouseUp() // если кнопка мыши отжата/отпущена (также работает на смартфоне)
-    {
-        isPressed = false; // кнопка не нажата (проверка)
-        BirdRigid.isKinematic = false; // птичка болтается на веревке
-
-        StartCoroutine(LetGo()); // запуск корутины
-        sprite.color = Color.white;
-    }
-
-    IEnumerator LetGo()
-    {
-        yield return new WaitForSeconds(0.1f); // ждем очень мало времени
-
-        gameObject.GetComponent<SpringJoint2D>().enabled = false; // выключается компонент "Веревка" (ну по-русски если), и птица улетает
-        this.enabled = false; // сам скрипт тоже отключается, чтобы мы не могли трогать птицу, когда она уже улетела
-        Destroy(gameObject, 2); // объект удаляется через пять секунд после того, как был отпущен
-
-        yield return new WaitForSeconds(1); // ждем две секунды
-
-        if (BirdPrefab != null) // если птицы еще есть (или грубо говоря, если количество префаборв не равно 0)
-        {
-            BirdPrefab.transform.position = BirdSpawnerPos.position; // то птички (которые находятся на земле) перемещаются на рогатку
-        }
-
-        else
-        {
-            GameOver(); // если птички кончились, то сцена перезапускается
-        }
-    }
-
-    public void GameOver()
-    {
-        gameOverScene.SetActive(true);
-        Time.timeScale = 0f;
-        Debug.Log("Game Over!");
-    }
-
-    public void LoadLevel()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        collided = true;
     }
 }

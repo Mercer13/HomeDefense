@@ -8,7 +8,6 @@ public class CollisionObject : MonoBehaviour
 {
     private int missileCount;
     [SerializeField] private int health;
-    public GameObject gameOverScene;
     [SerializeField] private Image[] hearts;
     [SerializeField] private Sprite aliveHeart;
     [SerializeField] private Sprite deadHeart;
@@ -38,8 +37,6 @@ public class CollisionObject : MonoBehaviour
     void Start()
     {
         Awake();
-        gameOverScene.SetActive (false);
-        Time.timeScale = 1f;
     }
 
     void Update()
@@ -69,14 +66,7 @@ public class CollisionObject : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverScene.SetActive(true);
-        Time.timeScale = 0f;
         Debug.Log("Game Over!");
-    }
-
-    public void LoadLevel()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("GameOverScene");
     }
 }
