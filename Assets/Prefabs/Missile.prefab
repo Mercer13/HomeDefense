@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5137257192061392943}
   m_Layer: 0
   m_Name: Missile
-  m_TagString: Untagged
+  m_TagString: MissileTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15664ac6eef074c468b2eacaa25ddaa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stamina: 5
-  speed: 4
+  stamina: 0.1
+  speed: 3
   dir: {x: -1, y: -0.1}
 --- !u!60 &5137257192061392940
 PolygonCollider2D:
@@ -216,7 +216,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 3
-  m_LinearDrag: 7
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}

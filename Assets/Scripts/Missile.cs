@@ -12,8 +12,8 @@ public class Missile : MonoBehaviour
     {
         if (collision.relativeVelocity.magnitude > stamina) // если сила удара больше, чем выносливость
         {
-           // Destroy(gameObject); // то объект удаляется
-           gameObject.SetActive(false);
+           Destroy(gameObject); // то объект удаляется
+           // gameObject.SetActive(false);
         }
     }
     // Update is called once per frame
