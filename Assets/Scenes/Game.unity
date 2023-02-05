@@ -572,7 +572,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.48, y: 7.31}
+    oldSize: {x: 10.18, y: 8.9}
     newSize: {x: 6.48, y: 7.31}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -764,7 +764,7 @@ SpriteRenderer:
   m_Size: {x: 1.76, y: 5.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &530817929
@@ -1345,10 +1345,10 @@ RectTransform:
   m_Father: {fileID: 1514862607}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -484.2, y: -133.2}
-  m_SizeDelta: {x: 16.7467, y: 28.2341}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 190, y: -37.3}
+  m_SizeDelta: {x: 33.4934, y: 56.4682}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1065281091
 MonoBehaviour:
@@ -1454,10 +1454,10 @@ RectTransform:
   m_Father: {fileID: 1514862607}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -548.6, y: -133.2}
-  m_SizeDelta: {x: 16.7467, y: 28.2341}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 120, y: -37.3}
+  m_SizeDelta: {x: 33.4934, y: 56.4682}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1140440463
 MonoBehaviour:
@@ -1742,6 +1742,10 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 35.046394
       objectReference: {fileID: 0}
+    - target: {fileID: 1696267468803594358, guid: 5f713735cb4fa624d8fce443973765a8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5cdf9ecf5eab6994fb82f7a3c33f3146, type: 3}
     - target: {fileID: 1696267468803594359, guid: 5f713735cb4fa624d8fce443973765a8, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2140,7 +2144,7 @@ SpriteRenderer:
   m_Size: {x: 1.76, y: 5.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2009975493 stripped
@@ -2295,10 +2299,10 @@ RectTransform:
   m_Father: {fileID: 1514862607}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -613.5, y: -133.5}
-  m_SizeDelta: {x: 16.7467, y: 28.2341}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -37.3}
+  m_SizeDelta: {x: 33.4934, y: 56.4682}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2051731241
 MonoBehaviour:
