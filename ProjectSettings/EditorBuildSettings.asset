@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Game.unity
     guid: d0ea28f5bdb7e3e4fb10dfde0b9d5299
   - enabled: 1
-    path: Assets/Scenes/End.unity
-    guid: 20799dfd3fb0f8d4190412a91f0c5c57
-  - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: c6a2f55cdf0563c40a86a9540135fe49
   - enabled: 1
@@ -20,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: 1cd1dd4048ff1254789e8190b93fc04b
+  - enabled: 1
+    path: Assets/Scenes/EasternEgg.unity
+    guid: bbbc7fe80cd94d64c97fd0b1e2c074b1
   m_configObjects: {}
