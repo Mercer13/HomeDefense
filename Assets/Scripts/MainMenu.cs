@@ -5,16 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public string nextLevelName;
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(nextLevelName);
+        SceneManager.LoadScene("Game");
     }
 
     public void ExitGame()
     {
         Debug.Log("Game is closed");
         Application.Quit();
+    }
+
+    public void PigeonButton()
+    {
+        SceneManager.LoadScene("EasternEgg");
     }
 }
